@@ -1,4 +1,4 @@
-# 🎬 Video Downloader v1.0.0
+# 🎬 Video Downloader 
 
 A powerful desktop application for downloading videos from YouTube and other platforms with high-quality output and browser cookie support.
 
