@@ -32,7 +32,7 @@
 
 ## 📸 Screenshots
 
-<img src="assets/screenshot-main.png" width="800" alt="Main page">
+<img src="assets/screenshot-main.png" width="1200" alt="Main page">
 
 > _More screenshots coming with the stable release :)_
 
