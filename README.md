@@ -30,11 +30,25 @@
 
 ---
 
+## 🎯 Who Is This For?
+
+### 🎓 Students & Note-takers
+Download a lecture, podcast, or documentary → auto-generate subtitles → let the AI produce a structured summary with timecodes → export to PDF. No subscription, no cloud upload, no one reading your notes but you.
+
+### 🎬 Video Editors
+Grab source footage from any supported platform at the best available quality. Use auto-generated subtitles for transcript-based editing or as a starting point for captions. Everything stays on your machine.
+
+### 🔒 Privacy-conscious Users
+All processing happens locally — no data leaves your device. No account required, no analytics, no ads. What you download and watch is your business.
+
+### 📺 Casual Viewers
+Paste a URL, hit Download, watch in the built-in player. That's it. Works offline after download — no buffering, no algorithm, no autoplay traps.
+
+---
+
 ## 📸 Screenshots
 
-<img src="assets/screenshot-main.png" width="1200" alt="Main page">
-
-> _More screenshots coming with the stable release :)_
+> _Screenshots coming with the stable release_
 
 <!-- TODO: add demo.gif -->
 
@@ -67,6 +81,7 @@
 3. Run **`Video Downloader.exe`** — no installation needed
 
 ### Option 3: From Source
+
 ```bash
 # 1. Clone the repository
 git clone https://github.com/your-username/video-downloader.git
@@ -85,6 +100,7 @@ npm start
 > ⚠️ On first launch, the Flask server starts automatically on port `5000`.
 
 ### For AI Summaries (optional)
+
 ```bash
 # Install Ollama — https://ollama.ai/download
 
@@ -107,6 +123,7 @@ Your video will be saved in MP4 format at the best available quality.
 ---
 
 ## 🏗️ Architecture
+
 ```
 ┌─────────────────────────────────┐
 │         Electron (UI)           │
@@ -159,9 +176,277 @@ Your video will be saved in MP4 format at the best available quality.
 - [x] Subtitle generation with SSE progress streaming
 - [x] AI conspect with timecodes + PDF export
 - [x] Built-in player (PiP, themes, position memory)
-- [x] Rezka / KinoGo support
-- [x] cinemahd-deaf.org HLS streaming support
+- [ ] Rezka / KinoGo support
+- [ ] cinemahd-deaf.org HLS streaming support
 - [ ] Auto-updater
+
+---
+
+## 🛟 FAQ & Troubleshooting
+
+Full in-app help is available via the **FAQ & Help Center** button. Below is a quick reference for the most common issues.
+
+---
+
+### 📥 Download Issues
+
+<details>
+<summary><strong>Download fails with "Backend error" or connection timeout</strong></summary>
+
+- Port 5000 is blocked or already in use by another app
+- Backend crashed — open Debug Console and look for red `[BACKEND ERR]` messages
+- Antivirus (e.g. Windows Defender) is blocking `app.exe` or `yt-dlp`
+- Invalid URL or unsupported platform
+
+**Fix:** Open Task Manager → end all `app.exe` processes → relaunch. If that doesn't help, temporarily disable antivirus and retry.
+
+</details>
+
+<details>
+<summary><strong>Downloaded video quality is lower than selected</strong></summary>
+
+- Source video was uploaded in lower quality (you can't download 1080p from a 720p upload)
+- Age-restricted content requires browser cookies for higher quality streams
+- Some regions have quality restrictions
+
+**Fix:** Enable browser cookies in Advanced Settings → try "Best Available" instead of a specific resolution.
+
+</details>
+
+<details>
+<summary><strong>Download is extremely slow or stalls</strong></summary>
+
+- 4K videos are 5–10× larger than 1080p — they just take longer
+- Platform is throttling the download
+- Your connection is unstable or shared
+
+**Fix:** Use WebM format (no conversion step), lower quality to 1080p, use wired Ethernet, close other bandwidth-heavy apps.
+
+</details>
+
+<details>
+<summary><strong>Downloaded file is corrupted or won't open</strong></summary>
+
+- Connection dropped mid-download
+- Disk ran out of space before download finished
+- FFmpeg format conversion failed
+- Antivirus quarantined the file during download
+
+**Fix:** Delete the corrupted file → check free disk space (need 5 GB+ free) → retry. Check Debug Console for FFmpeg errors.
+
+</details>
+
+<details>
+<summary><strong>"File already exists" error</strong></summary>
+
+- A file with the same name and quality tag already exists in the target folder
+
+**Fix (choose one):** Delete or rename the existing file → change save location → select a different quality (changes the filename) → switch format (MP4 ↔ WebM).
+
+</details>
+
+<details>
+<summary><strong>Platform not supported or video fails immediately</strong></summary>
+
+- ✅ Fully supported: YouTube, Vimeo, Dailymotion, Twitter/X
+- ⚠️ Partially supported: Facebook, Instagram, TikTok (may need cookies)
+- ❌ Not supported: Netflix, Disney+, and any DRM-protected or live-streaming content
+
+**Fix:** Paste the URL, check Debug Console for the specific error.
+
+</details>
+
+---
+
+### 🎬 Media Player
+
+<details>
+<summary><strong>Black screen or video won't play after download</strong></summary>
+
+- Built-in player is disabled: Settings → Advanced → Enable Built-in Media Player
+- File format not supported: MKV and AVI won't play in-app (use VLC instead)
+- File is corrupted (see Download Issues above)
+
+**Common error codes:**
+- `MEDIA_ERR_SRC_NOT_SUPPORTED` — wrong format or file not found
+- `MEDIA_ERR_DECODE` — corrupted file or unsupported codec
+- `MEDIA_ERR_NETWORK` — incorrect file path
+
+</details>
+
+<details>
+<summary><strong>No audio — video plays silently</strong></summary>
+
+- You downloaded with "Video Only" type — re-download as "Video + Audio"
+- System volume muted or wrong output device selected
+- Source video has no audio track (some screen recordings, animations)
+
+</details>
+
+<details>
+<summary><strong>Video looks pixelated or low quality in the player</strong></summary>
+
+- The player shows exactly what's in the file — it can't enhance quality
+- You downloaded 360p or 480p
+- Actual quality was lower than requested (check `actual_quality` in Debug Console)
+
+**Fix:** Re-download at 1080p or higher.
+
+</details>
+
+<details>
+<summary><strong>Keyboard shortcuts not working</strong></summary>
+
+Shortcuts require no text field to be focused.
+
+| Shortcut | Action |
+|---|---|
+| `Space` | Play / Pause |
+| `←` / `→` | Seek ±1 second |
+| `F` | Toggle fullscreen |
+| `ESC` | Exit fullscreen |
+
+**Fix:** Click anywhere on the page background to deselect inputs, then try again.
+
+</details>
+
+---
+
+### 🍪 Cookies & Browsers
+
+<details>
+<summary><strong>"No browser detected" warning</strong></summary>
+
+- App couldn't find Firefox, Chrome, Edge, Brave, or Opera in default install paths
+- Most public YouTube videos still work fine without cookies (up to 2160p via android_vr client)
+- Age-restricted, private, or members-only videos require cookies
+
+**Fix:** Settings → Advanced → Browser Paths → Browse to your browser's `.exe` → click "Test All Browser Paths".
+
+</details>
+
+<details>
+<summary><strong>Browser path set but still shows "Not found"</strong></summary>
+
+- You selected a shortcut (`.lnk`) instead of the actual `.exe`
+- Browser installed in a non-standard location
+- Typo or extra space in the path
+
+**Default locations:**
+- Firefox: `C:\Program Files\Mozilla Firefox\firefox.exe`
+- Chrome: `C:\Program Files\Google\Chrome\Application\chrome.exe`
+- Edge: `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`
+
+**Fix:** Right-click your browser desktop shortcut → "Open file location" → copy the path.
+
+</details>
+
+<details>
+<summary><strong>Cookies found but "unavailable"</strong></summary>
+
+- Browser is currently running and its cookie database is locked
+- Insufficient permissions to read browser profile data
+- Cookie database is corrupted
+
+**Fix:** Close the browser completely → click "Test All Browser Paths" again.
+
+</details>
+
+---
+
+### ⚙️ Troubleshooting
+
+<details>
+<summary><strong>"Port 5000 already in use"</strong></summary>
+
+- App is already running (opened twice)
+- A previous instance crashed but the process is still alive
+- Another program occupies port 5000
+
+**Fix #1:** `Ctrl + Shift + Esc` → Task Manager → end all `app.exe` processes → relaunch.
+
+**Fix #2 (CMD):**
+```
+taskkill /F /IM app.exe
+```
+
+**Find what's using the port:**
+```
+netstat -ano | findstr :5000
+```
+Then kill the process with that PID in Task Manager → Details tab.
+
+</details>
+
+<details>
+<summary><strong>App crashes or freezes during download</strong></summary>
+
+- Processing a large 4K file can freeze the UI temporarily — wait 2–3 min before panicking
+- Low RAM (< 4 GB free)
+- Disk full mid-download
+- Network dropped during download
+
+**Fix:** If frozen for 5+ minutes → Task Manager → End Task `app.exe` → delete partial file in Downloads → restart → try 720p first.
+
+**4K requirements:** 8 GB+ RAM, 10 GB+ free disk, 50 Mbps+ stable connection.
+
+</details>
+
+<details>
+<summary><strong>Settings not saving between sessions</strong></summary>
+
+- App is opened in incognito/private mode (localStorage is wiped on close)
+- Browser cleared cookies and site data
+- localStorage disabled in browser privacy settings
+
+**Fix:** Use normal (non-incognito) mode. When clearing browser history, uncheck "Cookies and site data".
+
+**Settings that are saved:** download type, format, quality, browser paths, media player state, recent videos history.
+
+</details>
+
+<details>
+<summary><strong>Debug Console error messages explained</strong></summary>
+
+| Message | Meaning | Fix |
+|---|---|---|
+| `[BACKEND ERR] Port 5000 already in use` | Duplicate instance running | Kill all `app.exe`, relaunch |
+| `MEDIA_ERR_SRC_NOT_SUPPORTED` | Unsupported format or missing file | Use MP4/WebM, re-download |
+| `MEDIA_ERR_DECODE` | Corrupted file | Delete and re-download |
+| `Sign in to confirm you're not a bot` | Need login cookies | Enable browser cookies in Advanced Settings |
+| `[WARNING] actual_quality != requested_quality` | Source doesn't have that quality | Try "Best Available" |
+
+**How to use the console effectively:**
+- Open it **before** starting a download to catch backend errors early
+- After a failure, scroll to the **first** red `ERROR` line — that's the root cause
+- Copy the full log output when filing a bug report
+
+</details>
+
+---
+
+### 🐛 Reporting a Bug
+
+**Include in your report:**
+
+1. App version (check Settings or About)
+2. Windows version (10/11, build number)
+3. What you did step by step
+4. Expected vs actual behaviour
+5. Full Debug Console output (copy-paste, not a photo)
+6. Video URL (if not private)
+
+**Example of a good report:**
+```
+Version: 1.0.0 | OS: Windows 11 22H2
+Issue: All downloads fail immediately
+Expected: Download starts
+Actual: "Backend error" after 3 seconds
+Console: [BACKEND ERR] Port 5000 already in use
+Steps: 1) Open app  2) Paste URL  3) Click Download  4) Error
+```
+
+→ **[Open an Issue on GitHub](https://github.com/your-username/video-downloader/issues)**
 
 ---
 
@@ -178,7 +463,7 @@ Your video will be saved in MP4 format at the best available quality.
 
 - ✨ Initial public release
 - 🎬 YouTube downloading with best quality selection
-- 🔐 Browser cookie integration for videos
+- 🔐 Browser cookie integration for private videos
 - 🎨 Modern, user-friendly interface
 - 📂 Custom download location selection
 - 🔄 Support for multiple consecutive downloads
