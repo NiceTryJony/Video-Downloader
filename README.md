@@ -32,7 +32,9 @@
 
 ## 📸 Screenshots
 
-> _Screenshots coming with the stable release_
+<img src="assets/screenshot-main.png" width="800" alt="Main page">
+
+> _More screenshots coming with the stable release :)_
 
 <!-- TODO: add demo.gif -->
 
