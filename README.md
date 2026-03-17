@@ -176,8 +176,8 @@ Your video will be saved in MP4 format at the best available quality.
 - [x] Subtitle generation with SSE progress streaming
 - [x] AI conspect with timecodes + PDF export
 - [x] Built-in player (PiP, themes, position memory)
-- [ ] Rezka / KinoGo support
-- [ ] cinemahd-deaf.org HLS streaming support
+- [x] Rezka / KinoGo support
+- [x] cinemahd-deaf.org HLS streaming support
 - [ ] Auto-updater
 
 ---
