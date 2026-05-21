@@ -46,14 +46,6 @@ Paste a URL, hit Download, watch in the built-in player. That's it. Works offlin
 
 ---
 
-## 📸 Screenshots
-
-> _Screenshots coming with the stable release_
-
-<!-- TODO: add demo.gif -->
-
----
-
 ## 📦 Downloads
 
 | File | Description | Size |
