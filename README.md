@@ -50,9 +50,7 @@ Paste a URL, hit Download, watch in the built-in player. That's it. Works offlin
 
 | File | Description | Size |
 |---|---|---|
-| **`setup-packed.zip`** | **Recommended** — Full installer with setup wizard | ~906 MB |
-| **`setup-unpacked.zip`** | Portable — Just extract and run, no installation | ~1010 MB |
-| **`video_downloader.zip`** | Source code with all dependencies | ~1080 MB |
+| **`Video_Downloader.zip`** | **Recommended** — Full installer with setup wizard | ~512 MB |
 
 ---
 
@@ -60,19 +58,13 @@ Paste a URL, hit Download, watch in the built-in player. That's it. Works offlin
 
 ### Option 1: Installer (Recommended)
 
-1. Download **`setup-packed.zip`**
+1. Download **`Video_Downloader.zip`**
 2. Extract the archive
 3. Run **`Video Downloader Setup 1.0.0.exe`**
 4. Follow the installation wizard
 5. Launch from Start Menu or Desktop shortcut
 
-### Option 2: Portable
-
-1. Download **`setup-unpacked.zip`**
-2. Extract to any folder
-3. Run **`Video Downloader.exe`** — no installation needed
-
-### Option 3: From Source
+### Option 2: From Source
 
 ```bash
 # 1. Clone the repository
@@ -110,7 +102,7 @@ ollama pull gemma3:4b
 4. **Click Download**
 5. **Watch the real-time progress bar**
 
-Your video will be saved in MP4 format at the best available quality.
+Your video will be saved in MP4 or another format what you want and at the best available quality.
 
 ---
 
@@ -145,9 +137,9 @@ Your video will be saved in MP4 format at the best available quality.
 | Component | Minimum | Recommended |
 |---|---|---|
 | OS | Windows 10 x64 | Windows 11 x64 |
-| RAM | 4 GB | 8 GB |
-| GPU VRAM | — | 4 GB (Turbo/Medium Whisper + Ollama) |
-| Disk | 5 GB | 10 GB |
+| RAM | 4 GB | 16 GB |
+| GPU VRAM | — | 6 GB (Turbo/Medium Whisper + Ollama) |
+| Disk | ~2 GB | > 10 GB |
 | Internet | Required | Required |
 
 ---
@@ -170,7 +162,6 @@ Your video will be saved in MP4 format at the best available quality.
 - [x] Built-in player (PiP, themes, position memory)
 - [x] Rezka / KinoGo support
 - [x] cinemahd-deaf.org HLS streaming support
-- [ ] Auto-updater
 
 ---
 
