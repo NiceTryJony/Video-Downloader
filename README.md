@@ -440,19 +440,6 @@ Steps: 1) Open app  2) Paste URL  3) Click Download  4) Error
 
 ---
 
-## 📝 Changelog
-
-### v1.0.0 — Initial Release *(January 22, 2026)*
-
-- ✨ Initial public release
-- 🎬 YouTube downloading with best quality selection
-- 🔐 Browser cookie integration for private videos
-- 🎨 Modern, user-friendly interface
-- 📂 Custom download location selection
-- 🔄 Support for multiple consecutive downloads
-
----
-
 ## 🙏 Acknowledgments
 
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp) — powerful video downloader
