@@ -58,7 +58,7 @@ Paste a URL, hit Download, watch in the built-in player. That's it. Works offlin
 
 ### Option 1: Installer (Recommended)
 
-1. Download **`Video_Downloader.zip`**
+1. Download **`Video_Downloader.zip`** from ```Releases```
 2. Extract the archive
 3. Run **`Video Downloader Setup 1.0.0.exe`**
 4. Follow the installation wizard
