@@ -67,7 +67,7 @@ Paste a URL, hit Download, watch in the built-in player. That's it. Works offlin
 
 ### Option 2: Install form Google Drive 
 
-1.Download **`Video_Downloader.zip`** from ![Install](https://drive.google.com/file/d/1cu-1I4LOCbKU3nBk0v5LGx4UieR9dxD5/view?usp=sharing)
+1. Download **`Video_Downloader.zip`** from ![Install](https://drive.google.com/file/d/1cu-1I4LOCbKU3nBk0v5LGx4UieR9dxD5/view?usp=sharing)
 2. Extract the archive
 3. Run **`Video Downloader Setup 1.0.0.exe`**
 4. Follow the installation wizard
